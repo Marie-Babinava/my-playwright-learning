@@ -58,7 +58,7 @@ await page.getByRole("button", { name: "Login" }).click();
 await expect(page.locator('[data-test="error-button"]'),"Error should appear for no credentials").toBeVisible();
 });
 
-// Login with locked out user test
+// Login with locked out user test - 1st test
 test('locked out user test', async ({ page }) => {
 // Put data into the input fields and click on login button
 await page.getByPlaceholder("Username").fill("locked_out_user");
