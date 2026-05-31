@@ -67,6 +67,17 @@ await page.getByRole("button", { name: "Login" }).click();
 // Check error on the page
 await expect(page.locator('[data-test="error-button"]'),"Error should appear for locked out user").toBeVisible();
 });
+
+// Login with locked out user - exact error text verification
+test('locked out user sees exact error message', async ({ page }) => {
+// Put data into the input fields and click on login button
+await page.getByPlaceholder("Username").fill("locked_out_user");
+await page.getByPlaceholder("Password").fill("secret_sauce");
+await page.getByRole("button", { name: "Login" }).click();
+// Check exact error text on the page
+await expect(page.locator('[data-test="error"]'),"Error should appear for locked out user").toHaveText("Epic sadface: Sorry, this user has been locked out.");
+});
+
 });
 
 // Все тесты для Cart
