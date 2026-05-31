@@ -10,6 +10,6 @@ Fix: Changed getByTestId("error") to locator('[data-test="error"]') and updated 
 How I verified: Ran the test in VS Code and it passed after the fix.
 
 # Test 3 - Cart badge appears after adding product
-Root cause: There was no await before page.locator("[data-test=\"add-to-cart-sauce-labs-backpack\"]").click();
+Root cause: Missing await before the click() action. Without await there is no guarantee that the click completes before the next line runs. The test happened to pass but it is unreliable and could fail in slower environments.
 Fix: Added await before page.locator("[data-test=\"add-to-cart-sauce-labs-backpack\"]").click();
 How I verified: Ran the test in VS Code and it passed after the fix.
