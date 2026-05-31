@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // Import test functions from Playwright - feature branch version
+=======
+// Import test functions from Playwright - main branch version
+>>>>>>> main
 import { test, expect } from '@playwright/test';
 
 test.describe("SauceDemo", () => {
