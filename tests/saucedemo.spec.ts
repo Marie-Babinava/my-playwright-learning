@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 // Import test functions from Playwright - feature branch version
-=======
-// Import test functions from Playwright - main branch version
->>>>>>> main
 import { test, expect } from '@playwright/test';
 
 test.describe("SauceDemo", () => {
@@ -27,7 +23,7 @@ await expect(page, "The Inventory page opens").toHaveURL('https://www.saucedemo.
 });
 
 // Negative login with invalid password" test
-test('negative login test with invalid password', async ({ page }) => {
+test.only('negative login test with invalid password', async ({ page }) => {
 // Put data into the input fields and click on login button
 await page.getByPlaceholder("Username").fill("standard_user");
 await page.getByPlaceholder("Password").fill("test");
