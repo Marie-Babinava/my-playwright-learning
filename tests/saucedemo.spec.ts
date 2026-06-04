@@ -23,7 +23,7 @@ await expect(page, "The Inventory page opens").toHaveURL('https://www.saucedemo.
 });
 
 // Negative login with invalid password" test
-test.only('negative login test with invalid password', async ({ page }) => {
+test('negative login test with invalid password', async ({ page }) => {
 // Put data into the input fields and click on login button
 await page.getByPlaceholder("Username").fill("standard_user");
 await page.getByPlaceholder("Password").fill("test");
